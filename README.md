@@ -9,6 +9,7 @@ Autorzy
 - Daniel "Daniex0r" <daniex0r@gmail.com>
 - Bartek 
 - Karer <karer.programmer@gmail.com>
+- Wielebny/W <wielebny@lss-rp.pl>
 
 
 Licencja
