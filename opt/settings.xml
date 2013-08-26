@@ -1,0 +1,8 @@
+<settings>
+	<setting name="@mysql.username" value=""/> <!-- nazwa uzytkownika -->
+	<setting name="@mysql.password" value=""/> <!-- haslo -->
+	<setting name="@mysql.database" value=""/> <!-- nazwa bazy danych -->
+	<setting name="@mysql.hostname" value="localhost"/> <!-- lub narzucone ip -->
+	<setting name="@mysql.port" value="3306"/>
+	<setting name="@mysql.sock" value="/var/run/mysqld/mysqld.sock" />
+</settings>
