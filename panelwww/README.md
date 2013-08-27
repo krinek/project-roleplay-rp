@@ -17,3 +17,5 @@ Kod dystrybuowany jest na licencji GPLv2. Polskie tłumaczenie licencji: http://
 
 Istnieje możliwość otrzymania tego kodu na innej licencji. Jeśli jesteś tym zainteresowany, skontaktuj się z nami.
 
+Bogatsza wersja panelu pisana na życzenie innego serwera znajduje się pod adresem http://valhalla.skrypty-mta.pl
+
