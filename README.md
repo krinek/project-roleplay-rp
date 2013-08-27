@@ -43,6 +43,10 @@ W repozytorium znajduje się:
 - Kod PHP realizujący rejestrację kont (istnieje możliwość zakupu paneli pod IPB)
 - Dodatkowe wymagane moduły
 
+W repozytorium nie znajduje się:
+- Skrypt zakupu kont premium w grze
+- Paneli do forum IP.Board
+- Podmianek
 
 Często zadawane pytania
 ========================================================================
