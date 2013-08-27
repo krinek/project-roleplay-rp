@@ -1,0 +1,27 @@
+RewriteEngine on
+
+RewriteRule ^page/([^/\.]+)/?$ index.php?page=$1 [L]
+
+RewriteRule ^panel/([^/\.]+)/([^/\.]+)/([^/\.]+)/?$ index.php?panel=$1&param2=$2&param3=$3 [L]
+RewriteRule ^panel/([^/\.]+)/([^/\.]+)/?$ index.php?panel=$1&param2=$2 [L]
+RewriteRule ^panel/([^/\.]+)/?$ index.php?panel=$1 [L]
+
+RewriteRule ^fairplay/([^/\.]+)/?$ index.php?fairplay=$1 [L]
+
+RewriteRule ^ticketcenter/([^/\.]+)/?$ index.php?tc=$1 [L]
+RewriteRule ^ticketcenter/([^/\.]+)/([^/\.]+)/?$ index.php?tc=$1&view=$2 [L]
+
+RewriteRule ^admin/([^/\.]+)/?$ index.php?admin=$1 [L]
+RewriteRule ^admin/([^/\.]+)/([^/\.]+)/?$ index.php?admin=$1&action=$2 [L]
+
+order allow,deny
+deny from 79.215.
+allow from all
+RewriteCond %{HTTP_HOST} ^mta\-psw\.pl$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.mta\-psw\.pl$
+RewriteRule ^/?$ "http\:\/\/mta\-psw\.pl\/forum" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^mta\-psw\.xaa\.pl$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.mta\-psw\.xaa\.pl$
+RewriteRule ^/?$ "http\:\/\/mta\-psw\.pl\/forum" [R=301,L]
+
