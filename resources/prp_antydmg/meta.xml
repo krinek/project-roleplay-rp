@@ -1,0 +1,7 @@
+<meta>
+	<info author="Project-Roleplay" type="script" description="antydmg"/>
+	
+---AntyDMG---
+	<script src="antydmg.lua" type="server" />
+
+</meta>	

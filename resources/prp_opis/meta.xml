@@ -1,0 +1,9 @@
+<meta>
+	<info author="Project-Roleplay" type="script" description="Opis postaci/aut"/>
+	
+---Opis---
+	<script src="opis.lua" type="client" />
+	<script src="opisauto.lua" type="client" />
+	<script src="opis_s.lua" type="server" />
+	
+</meta>	
