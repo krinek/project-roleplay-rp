@@ -7,7 +7,7 @@ Autorzy
 ========================================================================
 
 - Daniel "Daniex0r" <daniex0r@gmail.com>
-- Bartek 
+- Bartek[PL] <bartekd97@gmail.com>
 - Karer <karer.programmer@gmail.com>
 - Wielebny/W <wielebny@lss-rp.pl>
 
