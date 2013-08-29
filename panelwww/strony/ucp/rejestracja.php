@@ -3,7 +3,6 @@ if (!isset($_SESSION['ucp_loggedin']) or !$_SESSION['ucp_loggedin'])
 {
 	if (!isset($_POST['register']))
 	{
-		require_once("includes/header.php");
 		header('Content-Type: text/html; charset=utf-8');
 
 ?>		
@@ -129,7 +128,6 @@ if (!isset($_SESSION['ucp_loggedin']) or !$_SESSION['ucp_loggedin'])
 					</div>
 				</div>
 <?php
-		require_once("includes/footer.php");
 	} else {
 		if (isset($_POST['username']) and isset($_POST['password']) and isset($_POST['password2']) and isset($_POST['emailaddress']))
 		{
@@ -170,13 +168,13 @@ if (!isset($_SESSION['ucp_loggedin']) or !$_SESSION['ucp_loggedin'])
 								$smtp->auth($Config['SMTP']['username'], $Config['SMTP']['password']);
 								$smtp->mail_from($Config['SMTP']['from']);
 
-								$smtp->send($emailaddress, 'Project-Roleplay Dziękujemy za rejestracje konta do gry!', 'Witaj!
+								$smtp->send($emailaddress, 'Project-Roleplay-rp GPLv2 Dziękujemy za rejestracje konta do gry!', 'Witaj!
 								
 Dziękujemy za dołączenie do naszego serwera. Poniżej znajdziesz Dane do twojego konta:
 
 Użytkownik: '.$username.'
 Hasło: '.$_POST['password'].'
-FORUM: http://project-roleplay.pl/
+FORUM: http://twojadres.pl/
 
 Proszę przechowuj te dane ostrożnie, Gdy ktoś dokona włamania może być ciężko o przywrócenie tych danych.
 								

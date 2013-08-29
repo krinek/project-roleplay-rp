@@ -20,10 +20,10 @@ elseif (isset($_GET['panel']))
 	switch ($_GET['panel'])
 	{
 		case 'rejestracja-ukonczona':
-			require_once("pages/ucp/rejestracja-ukonczona.php");	
+			require_once("strony/ucp/rejestracja-ukonczona.php");	
 			break;
 		case 'rejestracja':
-			require_once("pages/ucp/register.php");	
+			require_once("strony/ucp/rejestracja.php");	
 			break;
 		default:
 			echo "Panie naprawiê jak znajdê :D .";
