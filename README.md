@@ -45,8 +45,8 @@ W repozytorium znajduje się:
 
 W repozytorium nie znajduje się:
 - Skrypt zakupu kont premium w grze
-- Paneli do forum IP.Board
-- Podmianek
+- Panel do forum IP.Board
+- Podmianki (za wyjątkiem samochodu previon)
 
 Często zadawane pytania
 ========================================================================
