@@ -1,0 +1,5 @@
+<meta>
+	<script src="client.lua" type="client" />
+	<file src="shader.fx" />
+	<file src="1.png" />
+</meta>
