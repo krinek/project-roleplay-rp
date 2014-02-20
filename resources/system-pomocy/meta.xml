@@ -1,0 +1,9 @@
+<meta>
+	<info author="Project-Roleplay" type="script" description="System Pomocy"/>
+	
+	<script src="s_infopoints.lua" type="server" />
+	
+	<script src="c_blips.lua" type="client" />
+	<file src="covers.ifp"/>
+
+</meta>

@@ -1,0 +1,32 @@
+<meta>
+	<info author="Project-Roleplay" type="script" description="System-kont"/>
+
+	<script src="g_events.lua" type="server" />
+	<script src="g_events.lua" type="client" />
+
+	<script src="s_main.lua" type="server" />
+	<script src="c_main.lua" type="client" />
+	<export function="loadSavedData" type="client"/>
+	
+	<script src="s_characters.lua" type="server" />
+	<script src="c_characters.lua" type="client" />
+	
+	<script src="s_login.lua" type="server" />
+	<script src="c_login.lua" type="client" />
+	
+	<script src="c_create_character.lua" type="client" />
+	<script src="s_create_character.lua" type="server" />
+	<script src="c_options.lua" type="client" />
+	
+	<script src="c_update.lua" type="client" />
+	<script src="kasa.lua" type="client" />
+	
+	<!-- dodatkowe -->
+	<file src="files/1.ogg"/>
+	<file src="files/uwaga.png"/>
+	<file src="files/klawisze.png"/>
+	<file src="files/info.png"/>
+	<file src="files/bip.mp3"/>
+	<!-- koniec_dodatkowe -->
+	
+	</meta>

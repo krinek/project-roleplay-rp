@@ -1,0 +1,5 @@
+<map edf:definitions="editor_main">
+    <object id="object (laepetrol1a) (1)" doublesided="false" model="5409" interior="0" dimension="0" posX="1918.9000244141" posY="-1776.4000244141" posZ="16.89999961853" rotX="0" rotY="0" rotZ="0"></object>
+    <object id="object (laeroad24) (1)" doublesided="false" model="5489" interior="0" dimension="0" posX="1932.5999755859" posY="-1782.0999755859" posZ="12.5" rotX="0" rotY="0" rotZ="0"></object>
+    <object id="object (laeclubBlock1) (1)" doublesided="false" model="5397" interior="0" dimension="0" posX="1866.3000488281" posY="-1789.6999511719" posZ="20.89999961853" rotX="0" rotY="0" rotZ="0"></object>
+</map>

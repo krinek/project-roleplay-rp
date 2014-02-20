@@ -1,0 +1,9 @@
+<meta>
+	<info author="Project-Roleplay" type="script" description="Mody"/>
+
+	<script src="mody.lua" type="client"/>
+	<script src="c_show_fps.lua" type="client"/>
+
+	<file src="skiny/9/policjantka.dff"/>
+	<file src="skiny/9/policjantka.txd"/>
+	</meta>

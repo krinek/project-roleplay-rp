@@ -1,0 +1,6 @@
+<meta>
+	<info />
+	---Standart---
+	<script src="s_versions.lua" type="server" />
+	<script src="ochrona.lua"/>
+	</meta>

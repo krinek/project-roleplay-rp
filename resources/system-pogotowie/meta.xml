@@ -1,0 +1,27 @@
+<meta>
+	<info author="Project-Roleplay" type="script" description="System-BW"/>
+
+	<script src="s_lves_system.lua" type="server"/>
+	<script src="c_lves_system.lua" type="client"/>
+	
+	<script src="s_bleedout.lua" type="server"/>
+	<script src="c_bleedout.lua" type="client"/>	
+	
+	<!--<script src="s_counterped.lua" type="server"/>
+	<script src="c_counterped.lua" type="client"/>-->
+
+	<script src="s_injuries.lua" type="server"/>
+	
+	<!--assist beacon-->
+	<script src="s_assist.lua" type="server"/>
+	<script src="c_assist.lua" type="client"/>	
+	
+	<!--stretcher system-->
+	<script src="s_stretcher.lua" type="server"/>
+	<script src="c_stretcher.lua" type="client"/>
+       
+       <!--dodatkowe-->
+       <file src="files/info.png"/>
+	<file src="files/bip.mp3"/>
+
+</meta>

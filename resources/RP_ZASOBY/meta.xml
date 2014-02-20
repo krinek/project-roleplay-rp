@@ -1,0 +1,7 @@
+<meta>
+	<info author="Daniex0r"/>
+	
+	<script src="c_zasoby.lua" type="client" />
+	<script src="s_zasoby.lua" type="server" />
+	
+</meta>

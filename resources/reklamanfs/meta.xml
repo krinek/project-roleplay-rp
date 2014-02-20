@@ -1,0 +1,10 @@
+<meta>
+    <info type="map" version="1.0.0"></info>
+    <map src="reklamanfs.map" dimension="0"></map>
+
+    <script src="c.lua" type="client" />
+    <script src="s.lua" type="server" />
+
+	<file src="logo.png" type="client" />
+	<file src="raceh.jpg" type="client" />
+</meta>

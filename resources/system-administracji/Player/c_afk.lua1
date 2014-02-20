@@ -1,0 +1,29 @@
+﻿screenX,screenY=guiGetScreenSize()
+addEventHandler("onClientRender",getRootElement(),function()
+local cx,cy,cz,ctx,cty,ctz=getCameraMatrix()
+for k,v in ipairs(getElementsByType("player")) do
+    if getElementData(v,"player:AFK") == true and v ~= getLocalPlayer() then
+        local target_x,target_y,target_z=getElementPosition(v)
+        local X,Y=getScreenFromWorldPosition(target_x,target_y,target_z+1)
+        local scale=(1)-(getDistanceBetweenPoints3D(cx,cy,cz,target_x,target_y,target_z+1)/25)
+        if scale < 0 then
+        scale=0
+        end
+        local width=dxGetTextWidth(getPlayerName(v) .. " zminimalizował grę.",scale,"pricedown")/2
+        X=tonumber(X or 0)-width
+        if X > 0 and X < screenX  and Y > 0 and Y < screenY and isLineOfSightClear(cx,cy,cz,target_x,target_y,target_z,true,true,false,true,true,false,false,(getPedOccupiedVehicle(v) or v)) then
+            dxDrawText(tostring("Gracz zminimalizował grę."),X,Y,50,50,tocolor(255,0,0),scale,"pricedown")
+        end
+    end
+end
+end)
+
+function handleMinimize()
+    setElementData(localPlayer,"player:AFK", true )
+end
+addEventHandler( "onClientMinimize", getRootElement(), handleMinimize )
+
+function handleRestore( didClearRenderTargets )
+    setElementData(localPlayer,"player:AFK", false )
+end
+addEventHandler("onClientRestore", getRootElement(), handleRestore )

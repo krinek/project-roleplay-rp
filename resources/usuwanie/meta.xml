@@ -1,0 +1,5 @@
+<meta>
+<info name="usuwanie" description="" author="SkubiPL" type="script" version="1.0"/>
+
+<script src="usuwanie.lua" type="server"/>
+</meta>
