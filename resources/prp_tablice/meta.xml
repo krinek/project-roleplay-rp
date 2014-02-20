@@ -1,0 +1,8 @@
+<meta>
+    <info author='karer' version='1.0' type='script' />
+
+	<script type="client" src='shader.lua' />
+	<file src="shader.fx" />
+	<file src="shader.png" />
+
+</meta>

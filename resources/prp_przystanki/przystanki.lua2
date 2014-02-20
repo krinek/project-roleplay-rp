@@ -1,0 +1,141 @@
+local przystanki={
+--  { x,y,z,obrot, nazwa= }
+    lotnisko={ 1703.14,-2261.15,13.51,270, nazwa="Lotnisko"},
+    urzad_miejski={ 1454.74,-1739.99,13.55,270, nazwa="Centrum" },
+    --sannews={479.58,-1085.31,82.48,356.5-90, nazwa="SAN News" },
+    grove_street={2430.82,-1648.16,13.53,90,nazwa="Grove Street" },
+    verona_beach={1162.12,-1719.95,14.23,270,nazwa="Verona Beach" },
+    santa_maria_beach={377.26,-1996.77,7.84,0,nazwa="Santa Maria Beach" },
+    idlewood={1966.23,-1743.63,13.55,90,nazwa="Idlewood" },
+    --wysypisko={673.59,-680.67,16.27,266-90,nazwa="Wysypisko śmieci"} ,
+    --kurierzy={618.6,-1360.17,13.59,268.7-90,nazwa="Firma kurierska"},
+	--szpital={2001.60,-1474.90,13.56,-90,nazwa="Szpital" },
+	--straz_pozarna={934.74,-1257.84,15.80,180, nazwa="Straż pożarna" },
+	--osrodek_strazakow={1357.11,-17.49,34.28,135, nazwa="Ośrodek Szkolenia Strażaków" },
+	--urzad_pocztowy={1229.44,-1564.98,13.58,90, nazwa="Urząd pocztowy" },
+	--kopalnia={1043.82,-457.91,51.77,289,nazwa="Kopalnia" },
+	--kierowcy_salon={ 1101.94,-1288.10,13.55,270,nazwa="Market" },
+	--downtown={ 1461.35,-1044.10,23.83,270, nazwa="Downtown" },
+	--lascolinas={ 2159.50,-1108.95,25.54,347.0-90, nazwa="Las Colinas" },
+	oceandocks={2733.94,-2495.57,13.66,180.0-90, nazwa="Ocean Docks" },
+    palamino_creek={2205.36,33.58,26.48,90,nazwa="Wioska Palomino Creek"},
+	blueberry={225.74,-99.67,1.58,180, nazwa="Wioska Blueberry" },
+	montgomery={1347.00,359.03,19.55,335, nazwa="Wioska Montgomery" },
+
+}
+
+
+g_przystanki = guiCreateGridList(0.7163,0.2267,0.3525,0.63,true)
+guiGridListSetSelectionMode(g_przystanki,0)
+g_przystanki_c_cel=guiGridListAddColumn(g_przystanki,"Cel",0.6)
+g_przystanki_c_koszt=guiGridListAddColumn(g_przystanki,"Koszt",0.2)
+guiSetVisible(g_przystanki,false)
+
+
+
+for i,v in pairs(przystanki) do
+    v.obiekt=createObject(1257, v[1], v[2], v[3], 0,0,v[4])
+--    setElementData(v.obiekt,"desc","Przystanek")
+--    setElementData(v.obiekt,"customAction",{label="Transport",resource="lss-autobusy",funkcja="menu_przystanek",args={indeks=i}})
+    v.colshape=createColSphere(v[1],v[2],v[3],3)
+end
+
+function przystanki_find(el)
+    for i,v in pairs(przystanki) do
+	if (v.colshape==el) then return i end
+    end
+    return nil
+end
+
+function calculateCost(p1, p2)
+    local dist=getDistanceBetweenPoints3D(p1[1],p1[2],p1[3], p2[1],p2[2],p2[3])+32
+    return math.floor(math.sqrt(dist)/2)+10
+end
+
+function przystanki_fill(przystanek)
+    guiGridListClear(g_przystanki)
+--    g_przystanki_c_cel=guiGridListAddColumn(g_przystanki,"Cel",0.6)
+--    g_przystanki_c_koszt=guiGridListAddColumn(g_przystanki,"Koszt",0.2)
+
+    for i,v in pairs(przystanki) do
+	if (not przystanek or i~=przystanek) then
+		if (v.row and isElement(v.row)) then destroyElement(v.row) end
+		v.row = guiGridListAddRow ( g_przystanki )
+		guiGridListSetItemText ( g_przystanki, v.row, g_przystanki_c_cel, v.nazwa, false, false )
+		v.koszt=calculateCost(przystanki[i], przystanki[przystanek])
+		guiGridListSetItemText ( g_przystanki, v.row, g_przystanki_c_koszt, tostring(v.koszt).."$", false, false )
+		if (v.koszt>getPlayerMoney()) then
+			guiGridListSetItemColor(g_przystanki, v.row, g_przystanki_c_koszt, 255,0,0)
+		else
+			guiGridListSetItemColor(g_przystanki, v.row, g_przystanki_c_koszt, 155,255,155)
+		end
+	end
+    end
+end
+
+
+
+function przystanek_wybor()
+--    removeEventHandler( "onClientGUIDoubleClick", g_przystanki, przystanek_wybor, false );
+     local selectedRow, selectedCol = guiGridListGetSelectedItem( g_przystanki );
+     if (not selectedRow) then return end
+     for i,v in pairs(przystanki) do
+        if (v.row==selectedRow) then
+	    if (v.koszt>getPlayerMoney()) then
+		outputChatBox("Nie stać Cię na to.", 255,0,0,true)
+--		addEventHandler( "onClientGUIDoubleClick", g_przystanki, przystanek_wybor, false );
+		return
+	    end
+	    guiSetVisible(g_przystanki,false)	-- aby nie klikli 2x
+	    --exports["lss-gui"]:panel_hide()
+--	    outputChatBox("row " .. v.row .. " nazwa " .. v.nazwa)
+	    triggerServerEvent("takePlayerMoney", localPlayer, v.koszt)
+		--exports.global:takeMoney( localPlayer, v.koszt )
+	    fadeCamera(false)
+	    triggerServerEvent("broadcastCaptionedEvent", localPlayer, getPlayerName(localPlayer) .. " odjeżdza autobusem.", 5, 15, false)
+    	    setTimer(function()
+
+		setElementPosition(localPlayer, v[1], v[2], v[3])
+		setTimer(triggerServerEvent, 750, 1, "broadcastCaptionedEvent", localPlayer, getPlayerName(localPlayer) .. " przyjeżdza autobusem.", 5, 15, false)
+		fadeCamera(true)
+--		addEventHandler( "onClientGUIDoubleClick", g_przystanki, przystanek_wybor, false );
+	    end, 1000, 1)
+	    return
+	end
+     end
+     return
+end
+
+addEventHandler( "onClientGUIDoubleClick", g_przystanki, przystanek_wybor, false );
+
+addEventHandler("onClientColShapeHit", resourceRoot, function(hitElement, matchingDimension)
+    if (hitElement~=localPlayer or not matchingDimension or getElementInterior(localPlayer)~=getElementInterior(source)) then return end
+    if (getPedOccupiedVehicle(localPlayer)) then return end
+    local przystanek=przystanki_find(source)
+    if (not przystanek) then return false end
+    
+    przystanki_fill(przystanek)
+    guiSetVisible(g_przystanki,true)
+end)
+
+addEventHandler("onClientColShapeLeave", resourceRoot, function(hitElement, matchingDimension)
+    if (hitElement~=localPlayer or not matchingDimension or getElementInterior(localPlayer)~=getElementInterior(source)) then return end
+    guiSetVisible(g_przystanki,false)
+end)
+
+--[[
+function menu_przystanek(argumenty)
+    local i=argumenty.indeks
+
+    if (getElementInterior(localPlayer)~=getElementInterior(przystanki[i].obiekt) or getElementDimension(localPlayer)~=getElementDimension(przystanki[i].obiekt)) then return end -- nie powinno sie wydarzyc
+    local x,y,z=getElementPosition(localPlayer)
+    if (getDistanceBetweenPoints3D(x,y,z,przystanki[i][1], przystanki[i][2], przystanki[i][3])>5) then
+	outputChatBox("Jesteś zbyt daleko od przystanku. Podejdź bliżej.", 255,0,0,true)
+	return
+    end
+    
+
+end
+]]--
+
+fileDelete("przystanki.lua")

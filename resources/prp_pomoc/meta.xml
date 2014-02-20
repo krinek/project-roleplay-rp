@@ -1,0 +1,14 @@
+<meta>
+	<info author="Project-Roleplay" type="script" description="Pomoc"/>
+<min_mta_version>1.1.1-03505</min_mta_version>
+
+	<script src="przewodnik.lua" type="client" />
+	<file src="img/prp.png" />
+	
+	<config src="pomoc/kary.xml" type="client" />
+	<config src="pomoc/podstawy.xml" type="client" />
+	<config src="pomoc/zasady.xml" type="client" />
+	<config src="pomoc/animacje.xml" type="client" />
+	<config src="pomoc/tips.xml" type="client" />
+</meta>
+	

@@ -1,0 +1,5 @@
+<meta>
+	<info author="@DGJ" type="script" />	
+	<script src="news.lua" type="client" />
+	<script src="news_s.lua" type="server" />
+</meta>

@@ -1,0 +1,9 @@
+<meta>
+	<info author="Project-Roleplay" type="script" description="Prystanki-Autobusowe"/>
+
+	<file src="audio/phone-busy.ogg" type="client" />
+	<file src="audio/tp-ring.ogg" type="client" />
+	<file src="audio/tp-transfer.ogg" type="client" />
+	<script src="przystanki.lua" type="client"/>
+	<script src="s_przystanki.lua" type="server"/>
+</meta>

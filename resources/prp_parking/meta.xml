@@ -1,0 +1,5 @@
+<meta>
+    <info type="map" version="1.0.0"></info>
+    <script src="skrypty\usuwanieobiektow.lua" type="client" />
+    <map src="mapa\parking.map" type="client" />
+</meta>

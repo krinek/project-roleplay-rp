@@ -1,0 +1,13 @@
+<meta>
+    <info type="script"/>
+	<script src="neony.lua" type="server" />
+	<script src="import.lua" type="client" />
+	<file src="GreenNeonTube1.col" />
+	<file src="GreenNeonTube1.dff" />
+	<file src="BlueNeonTube1.col" />
+	<file src="BlueNeonTube1.dff" />
+	<file src="YellowNeonTube1.col" />
+	<file src="YellowNeonTube1.dff" />
+	<file src="RedNeonTube1.col" />
+	<file src="RedNeonTube1.dff" />
+</meta>

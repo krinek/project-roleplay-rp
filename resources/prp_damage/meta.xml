@@ -1,0 +1,6 @@
+<meta>
+	<info author="Project-Roleplay" type="script" description="Wyjscie_z_gry"/>
+
+	<script src="targetC.lua" type="client"/>
+	<file src="arrow.png" type="client" />
+</meta>

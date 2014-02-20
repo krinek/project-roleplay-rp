@@ -1,0 +1,10 @@
+<meta>
+	<info author="Project-Roleplay" type="script" name="Dzwon" description="Dzwon" version="1.0.0"/>
+
+	<script src="dzwony.lua" type="client" />
+	<file src="audio/dzwon.ogg" />
+	<file src="audio/dzwon2.ogg" />
+	<file src="audio/dzwon-single.mp3" />
+	
+</meta>
+	

@@ -1,0 +1,18 @@
+<meta>
+	<info author="Project-Roleplay" type="script" description="wiadomoœci info"/>
+	
+---TABLICE INFO---	
+	<script src="informacje.lua" type="server" />
+	<script src="informacje_c.lua" type="client" />
+	<script src="informacje2.lua" type="server" />
+	<script src="informacje2_c.lua" type="client" />
+	<script src="informacje_lspd.lua" type="server" />
+	<script src="informacje_lspd_c.lua" type="client" />
+	<script src="informacje_pd.lua" type="server" />
+	<script src="informacje_pd_c.lua" type="client" />
+	<script src="informacje_lses.lua" type="server" />
+	<script src="informacje_lses_c.lua" type="client" />
+	<script src="informacje_lsfd.lua" type="server" />
+	<script src="informacje_lsfd_c.lua" type="client" />
+	
+</meta>	

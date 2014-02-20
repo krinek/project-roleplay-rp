@@ -1,0 +1,6 @@
+addEvent ("onCallForData",true)
+addEventHandler ("onCallForData",getRootElement(),function(player)
+	local maxP = getMaxPlayers()
+	local sName = getServerName()
+	triggerClientEvent("onScoreboardDataLoad", getRootElement(), maxP, sName, player)
+end)

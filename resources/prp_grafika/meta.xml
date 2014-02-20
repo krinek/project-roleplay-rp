@@ -1,0 +1,24 @@
+<meta>
+	<info author="Project-Roleplay" type="script" description="system shaderow"/>
+	
+---Grafika---
+	<script src="grafika_c.lua" type="client" />
+	<script src="grafika_gui_c.lua" type="client" />
+	<script src="grafika_s.lua" type="server" />
+	<file src="shaders/addPalette.fx" type="client" />
+	<file src="shaders/addBlend.fx" type="client" />
+	<file src="shaders/blurH.fx" type="client" />
+	<file src="shaders/blurV.fx" type="client" />
+	<file src="shaders/brightPass.fx" type="client" />
+	<file src="shaders/mta-helper.fx" type="client" />
+	<file src="shaders/car_paint.fx" type="client" />
+	<file src="shaders/car_refgrun.fx" type="client" />
+	<file src="shaders/car_refgene.fx" type="client" />
+	<file src="shaders/water.fx" type="client" />
+	<file src="images/smallnoise3d.dds" type="client" />
+	<file src="images/cube_env256.dds" type="client" />
+
+	<file src="images/enbpalette1.png" type="client" />
+	<file src="images/enbpalette2.png" type="client" />
+	
+</meta>

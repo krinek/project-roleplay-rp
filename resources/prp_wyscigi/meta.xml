@@ -1,0 +1,11 @@
+<meta>
+    <info author="bartekPL" name="RCD" version="1.0.0" type="misc"/>
+	
+	<script src="c.lua" type="client" />
+	<script src="s.lua" type="server" />
+
+	<file src="cd/cd_3.png" type="client" />
+	<file src="cd/cd_2.png" type="client" />
+	<file src="cd/cd_1.png" type="client" />
+	<file src="cd/cd_go.png" type="client" />
+</meta>

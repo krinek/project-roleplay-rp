@@ -1,0 +1,5 @@
+<meta>
+    <info author="bartek[PL]" type="script"/>
+	<script src="server.lua" type="server" validate="false" />
+	<script src="client.lua" type="client" cache="false" />
+</meta>

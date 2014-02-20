@@ -1,0 +1,19 @@
+<meta>
+	<info author="Project-Roleplay" type="script" description="bilard"/>
+	
+---Bilard---
+    <file src="audio/108615__juskiddink__billiard-balls-single-hit-dry.ogg" />
+
+	<script src="utils.lua" type="client" />
+	<script src="utils.lua" type="server" />
+
+	<script src="b_c.lua" type="client" />
+	<script src="billard.lua" type="server" />
+
+	<script src="interaction.lua" type="server" />
+	
+	
+	<export function="getPlayerVersion" type="server"/>
+	<export function="setPlayerVersion" type="server"/>
+	
+</meta>

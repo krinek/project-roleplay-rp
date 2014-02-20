@@ -1,0 +1,8 @@
+<meta>
+    <info author="Project-Roleplay" type="script" description="Dziek Kluby"/>
+
+    <script src="muzyka.lua" type="client" />
+	
+	<file src="audio/muzyka.ogg"/>
+	
+</meta>

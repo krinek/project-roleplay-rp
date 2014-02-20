@@ -1,0 +1,10 @@
+<meta>
+	<info author="Project-Roleplay" type="script" description="Tekst 3d"/>
+
+	<script src="texty.lua" type="client"/>
+	<script src="text3dC.lua" type="client"/>
+	<script src="tablicainf_parking_pd.lua" type="client"/>
+	<script src="tablicainf_urzad.lua" type="client"/>
+	<script src="tablicainf_warsztat1.lua" type="client"/>
+
+</meta>

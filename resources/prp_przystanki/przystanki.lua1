@@ -1,0 +1,202 @@
+local budki={
+--		nazwa					
+--		locb = lokalizacja budki + obrot (x,y,z,a)
+--		model = id obiektu, domyslnie 1216
+--		telpos = x,y,z,promien
+--		od getposa z odejmujemy zawsze 0.3
+	--{	nazwa="Los Santos - LS",	locb={1080.75,-1747.68,13.13, 180}, telpos={1080.68,-1742.03,13.48,4 },		kolor={255,255,0}  },
+	--{	nazwa="San Fierro - SF", locb={-2018.55,878.71,45.15, 90},	telpos={-2014.18,884.24,45.45, 2},			kolor={255,255,0}},		
+	--{	nazwa="Las Venturas - LV", locb={2103.07,1003.11,10.8,	90.0 },	telpos={2107.08,1013.52,10.82,	3},		kolor={255,255,0}  },
+	--{	nazwa="Gora Chiliad", locb={-2356.83,-1623.96,483.37, 76},	telpos={-2351.87,-1633.07,483.69, 5}},	
+	--{	nazwa="Grove Street", locb={2510.61,-1665.95,13.27, 282},	telpos={2500.05,-1668.31,13.35, 5}},	
+	--{	nazwa="Lotnisko LS", locb={1952.04,-2177.06,13.25, 90},	telpos={1963.57,-2177.44,13.55, 2}},	
+	--{	nazwa="Lotnisko SF", locb={-1547.61,-446.02,5.78, 225},	telpos={-1541.96,-436.92,6.00, 1}},
+	--{	nazwa="Lotnisko LV", locb={1720.97,1615.2, 9.90, -20.0},	telpos={1716.9,1604,10, 2}},
+	--{	nazwa="Lotnisko - pustynia", locb={414.00,2534.16,16.26, 0},	telpos={419.90,2525.81,16.51, 3}},
+	--{	nazwa="Baza PKS / Taxi", locb={2791.21,2442.44,10.76, 315},	telpos={2782.05,2432.94,10.82, 4}},
+	--{	nazwa="Stacja PKP w LS", locb={1727.69,-1943.02,13.27, 0},	telpos={1727.87,-1948.41,14.12, 1}},
+	--{	nazwa="Stacja PKP w SF", locb={-1971.73,162.80,27.39, 0},	telpos={-1971.73,157.89,27.69, 1}},	
+	--{	nazwa="Stacja PKP w LV", locb={2856.16,1303.67,11.09, 90},	telpos={2860.59,1303.61,11.39, 1}},
+	--{	nazwa="Stacja tramwaju", locb={-2254.30, 548.74, 34.75, 270},	telpos={ -2261.31, 548.30, 35.02, 3}},	
+	--{	nazwa="Bank", locb={2303.44,-11.60,26.18,270},	telpos={2299.09,-11.66,26.48,2},		kolor={255,255,0}},	
+	--{	nazwa="Warsztat samochodowy", locb={1076.05,1842.47,10.5, 0}, telpos={ 1066.8,1838.99, 10.82, 2}},
+	{	nazwa="Komisariat Policji LS", locb={1437.17, -1738.73, 13.54, 270}, telpos={1432.16, -1738.75, 13.54, 2},	kolor={100,100,255}},	
+	--{	nazwa="Komisariat Policji SF", locb={-1623.88,716.79,14.31, 180}, telpos={-1623.81,723.05,14.62, 2},	kolor={100,100,255}},
+	--{	nazwa="Komisariat Policji LV", locb={2282.93,2432.38,10.52, 0}, telpos={2283.33,2424.59,10.82, 3},		kolor={100,100,255}},	
+	--{	nazwa="Pig Pen LS", locb={2430.73,-1219.56,25.1, 0.0},	telpos={2430.76,-1225.17,25.34, 2},				kolor={255,100,100}},
+	--{	nazwa="Baza Smoka", locb={991.55,1136.42,10.52, 270},	telpos={ 984.57,1137.10,10.82, 2}},
+	--{	nazwa="Osiedle w SF", locb={-2794.65,-200.68,6.89, 0},	telpos={-2795.20,-204.99,7.19, 2}},	
+	--{	nazwa="Kluby", locb={984.77,2562.82,10.45, 59},	telpos={995.35,2556.36,10.75, 3}},
+	--{	nazwa="Kosciol", locb={360.53,-1805.32,4.37, 270},	telpos={353.37,-1798.96,4.83, 3}},
+	--{	nazwa="Baza 'NASA'", locb={-2875.26,491.23,4.61, 90},	telpos={-2868.55,483.37,4.91, 4}},
+	--{	nazwa="Salon samochodowy w SF", locb={-1977.54,309.36,34.87, 0},	telpos={-1976.35,300.05,35.17, 3}},
+	--{	nazwa="Magazyn (Warehouse)", locb={-24.2,-233.6,5.1, 180},	telpos={-23.6,-225.18,5.4, 4}},		
+	{	nazwa="Wiezowiec SF", locb={-1739.92,797.37,167.45,281.2}, telpos={-1745.82,795.89,167.66,1}},
+	--{	nazwa="Studnia smierci / Wiezowiec w LS", locb={1560.19,-1385.32,13.72, 0},	telpos={1549.97,-1392.61,14.02, 2},				kolor={0,255,150}},
+	--{	nazwa="StuntPark", locb={-3707.25,-1376.88,17.85, 270},	telpos={-3719.8,-1376.6,18.1, 4},				kolor={0,255,150}},
+	--{	nazwa="SkatePark", locb={1900.75,-1351.95,13.17, 0},	telpos={1909.33,-1360.36,13.54, 2},				kolor={0,255,150}},
+	--{	nazwa="Parkour Classic / Wspinaczka Classic / WPS", locb={-948.57,2673.13,44.58, 308},	telpos={-954.91,2674.20,44.53, 3},				kolor={0,255,150}},	
+	--{	nazwa="Extreme Zjazd 1 'Classic'", locb={-1177.37,4031.46,3036.23, 52},	telpos={-1167.48,4025.36,3036.53, 3},				kolor={0,255,150}},
+	--{	nazwa="Extreme Zjazd 2 'Exploding'", locb={-1441.05,-2567.34,2355.48, 117},	telpos={-1427.04,-2560.78,2355.78, 3},				kolor={0,255,150}},
+	--{	nazwa="Extreme Zjazd 3 'Smart'", locb={-2135.49,-1574.39,1985.28, 90},	telpos={-2117.37,-1574.43,1985.58, 3},				kolor={0,255,150}},
+	--{	nazwa="Extreme Zjazd 4 'Dark Tunnel'", locb={5196.41,-1408.75,3201.37, 270},	telpos={5183.59,-1409.05,3201.67, 3},				kolor={0,255,150}},
+	--{	nazwa="Extreme Zjazd 5 'Pipeline Evil'", locb={-3502.35,2206.03,3252.67, 36},	telpos={-3491.39,2193.45,3252.98, 3},				kolor={0,255,150}},
+	--{	nazwa="Extreme Zjazd 6 'Drainpipe'", locb={451.02,3680.31,3064.72, 0},	telpos={450.71,3659.28,3065.02, 3},				kolor={0,255,150}},
+	--{	nazwa="Arena Poszukiwaczy Skarbow", locb={-1561.76,2902.54,55.26, 180},	telpos={-1562.12,2913.08,51.33, 2},				kolor={0,255,150}},
+	--{	nazwa="Tor wyscigowy", locb={-1688.84,-223.32,13.85, 45},	telpos={-1699.93,-231.44,14.14, 3},				kolor={0,255,150}},
+	--{	nazwa="Skoki w dal", locb={1911.58,-707.90,112.82,270.0}, telpos={1903.92,-711.50,112.49,1}, kolor={255,255,100}},
+	--{	nazwa="Skoki do wody", locb={2880.91,-965.32,10.58, 0},	telpos={2880.57,-971.72,10.88, 4},				kolor={0,255,150}},
+	--{	nazwa="Destruction Derby", locb={-1404,1907.1,54.2, 180},	telpos={-1404.3,1918.4,54.5, 4},				kolor={0,255,150}},
+	--{	nazwa="Wyrzutnia", locb={-662.71,2307.36,135.85, 0},	telpos={-662.69,2301.29,136.08, 1},				kolor={0,255,150}},	
+--	{	nazwa="Skok nad statkiem", locb={-2032.61,1537.62,-40.49,90}, telpos={-2037.95,1533.71,-40.50,83.9},	kolor={0,255,255}},
+--	{	nazwa="Labirynt",	locb={500.05,497.84,2001.25,180.0}, telpos={500.29,501.39,2001.56,1}, kolor={255,255,100}},
+
+	--{	nazwa="Port w SF / Prom w San Fierro", locb={-1539.05,558.09,6.88, 306},	telpos={-1543.16,555.59,7.18, 2}},
+	--{	nazwa="Port w LS", locb={2750.15,-2513.69,13.35, 180},	telpos={2748.41,-2508.89,13.65, 2}},		
+	--{	nazwa="Sale do turniejow - KSW / BGB / TSP / WWK / RTA", locb={1293.07,-812.25,83.84, 0},	telpos={1300.55,-815.33,84.14, 1}},
+	--{	nazwa="Wietnam (Poligon)", locb={-620.36,-1834.60,44.43, 0},	telpos={-615.11,-1849.74,44.74, 3},			kolor={255,0,100}},
+	--{	nazwa="Afganistan", locb={24.72,1895.51,18.50, 180},	telpos={17.27,1905.48,17.64, 3},					kolor={255,0,100}},
+	--{	nazwa="Arena minigun", locb={2264.33,-2700.97,13.25, 180},	telpos={2267.50,-2693.51,13.55, 1},					kolor={255,0,100}},
+	--{	nazwa="Miejsce do solowek (solo)", locb={-35.86,-1350.26,195.45, 270},	telpos={-53.03,-1350.02,195.76, 4}},
+	--{	nazwa="Kopalnia", locb={584.81,876.38,-42.80, 90},	telpos={588.66,869.85,-42.50, 1}},	
+	--{	nazwa="Andromeda LS", locb={1259.55,-1481.58,1505.12, 180},	telpos={1259.63,-1473.19,1503.52, 1}},
+	--{	nazwa="Andromeda SF", locb={-2110.44,708.42,1490.12, 180},	telpos={-2110.49,716.38,1488.62, 1}},
+	--{	nazwa="Andromeda LV", locb={2309.53,1218.42,1505.12, 180},	telpos={2309.57,1227.98,1503.25, 1}},
+	--{	nazwa="Baza TIR'ow (pustynia)", locb={-300.89,1541.19,75.26, 48},	telpos={-288.77,1535.63,75.56, 4}},
+	--{	nazwa="Baza TIR'ow (wioska)", locb={-507.45,-539.23,25.22, 0},	telpos={-507.13,-550.76,25.52, 4}},		
+	--{	nazwa="Baza radiowo-telewizyjna 'Sky News'", locb={-2528.20,-624.95,132.46, 180},	telpos={-2527.70, -612.80, 132.56, 4}},
+	--{	nazwa="Fabryka", locb={2459.04,2824.21,10.52, 180},	telpos={2458.85,2831.85,10.82, 3}},
+	--{	nazwa="Ranczo", locb={-1198.95,-1071.80,129.16, 270},	telpos={-1209.53,-1072.73,128.27, 3}},
+	--{	nazwa="Odludzie", locb={ -443.86,-2704.60,167.86, 270},	telpos={-434.80,-2704.29,170.45, 1}},
+	--{	nazwa="Wioska 'Palomino Creek'", locb={2303.63,3.21,26.18, 270},	telpos={2301.24,6.61,26.48, 2},		kolor={255,0,255}},
+	--{	nazwa="Wioska 'Montgomery'", locb={1373.70,469.81,19.88, 335},	telpos={1371.55,465.16,20.05, 2},		kolor={255,0,255}},
+	--{	nazwa="Wioska 'Dillimore'", locb={661.35,-576.11,16.04, 270},	telpos={655.69,-576.28,16.34, 2},		kolor={255,0,255}},
+	--{	nazwa="Wioska 'Blueberry'", locb={256.77,-62.20,1.28, 0},	telpos={261.19,-64.20,1.5, 2},		kolor={255,0,255}},
+	--{	nazwa="Wioska 'Angel Pine'", locb={-2168.84,-2380.17,30.32, 321},	telpos={-2171.59,-2382.75,30.62, 2},		kolor={255,0,255}},
+	--{	nazwa="Wioska 'Fort Carlson'", locb={-95.88,1083.23,19.44, 180},	telpos={-95.66,1088.94,19.7, 2},		kolor={255,0,255}},
+	--{	nazwa="Wioska 'Las Payasadas'", locb={-238.11,2710.80,62.53, 0},	telpos={-241.33,2707.70,62.69, 2},		kolor={255,0,255}},
+	--{	nazwa="Wioska 'El Castillo del Diablo'", locb={-385.58,2210.24,42.12, 99},	telpos={-378.18,2216.26,42.09, 4},		kolor={255,0,255}},	
+	--{	nazwa="Wioska 'Las Barrancas'", locb={-861.25,1536.50,22.29, 180},	telpos={-861.42,1541.54,22.71, 2},		kolor={255,0,255}},
+	--{	nazwa="Wioska 'El Quebrados'", locb={-1478.39,2646.70,55.54, 180},	telpos={-1477.99,2652.36,55.84, 2},		kolor={255,0,255}},
+	--{	nazwa="Wioska 'Bayside' / Prom w Bayside Marina", locb={-2444.29,2252.22,4.59, 0},	telpos={-2449.73,2247.65,4.91, 2},		kolor={255,0,255}},
+	--{	nazwa="Baza VIP", locb={1993.35,-884.15,129.31,0.0}, telpos={1993.70,-886.56,129.61,2}, kolor={255,255,0}},
+}
+
+
+local gbudka={}
+gbudka.win=guiCreateWindow ( 796/1024,  0.3, (1018-796)/1024, 0.6, "Lista przystanków", true )
+gbudka.gl=guiCreateGridList( 0.0, 0.1, 0.9, 0.9, true, gbudka.win)
+guiGridListSetSelectionMode(gbudka.gl,0)
+guiGridListAddColumn ( gbudka.gl, "Lokalizacja", 0.9 )
+
+
+guiSetVisible(gbudka.win, false)
+
+local function budkaMarkerHit(el,md)
+	if not md or el~=localPlayer then return end
+	if source and isElement(source) and source~=root then
+
+		local __,__,z=getElementPosition(localPlayer)
+		local __,__,z2=getElementPosition(source)
+		if math.abs(z-z2)>5 then return end
+	end
+	guiSetVisible(gbudka.win, true)
+	showCursor(true,false)
+	setPedWeaponSlot(localPlayer, 0)
+	-- wypelniamy liste
+	guiGridListClear(gbudka.gl)
+	local wlevel=tonumber(getElementData(root,"waterLevel")) or 0
+	do
+			local row = guiGridListAddRow ( gbudka.gl )
+			--guiGridListSetItemText ( gbudka.gl, row, 1, "Twój dom", false, false )
+			guiGridListSetItemData ( gbudka.gl, row, 1, -1)
+			guiGridListSetItemColor ( gbudka.gl, row, 1, 100,255,100)
+
+			local g=getElementData(localPlayer, "gang")
+			if g then
+				local row = guiGridListAddRow ( gbudka.gl )
+				--guiGridListSetItemText ( gbudka.gl, row, 1, "Spawn gangu "..g, false, false )
+				guiGridListSetItemData ( gbudka.gl, row, 1, -2)
+				guiGridListSetItemColor ( gbudka.gl, row, 1, 255,0,5)
+
+			end
+	end
+	for i,v in ipairs(budki) do
+		if v.marker~=source and (wlevel==0 or (v.telpos[3]+3)>wlevel) then
+--			outputDebugString(wlevel .. "  " .. (v.telpos[3]+3))
+			local row = guiGridListAddRow ( gbudka.gl )
+
+			guiGridListSetItemText ( gbudka.gl, row, 1, v.nazwa, false, false )
+			guiGridListSetItemData ( gbudka.gl, row, 1, i)
+			if (v.kolor) then
+				guiGridListSetItemColor ( gbudka.gl, row, 1, v.kolor[1] or 255,v.kolor[2] or 255,v.kolor[3] or 255)
+			end
+		end
+	end
+end
+
+local function budkaMarkerLeave(el,md)
+	if el~=localPlayer then return end
+	guiSetVisible(gbudka.win, false)
+	showCursor(false)
+end
+
+
+addEventHandler("onClientResourceStart", resourceRoot,function()
+	for i,v in ipairs(budki) do
+		local model=1216
+		if (v.model) then model=v.model end
+
+		--createObject(model, v.locb[1], v.locb[2], v.locb[3], 0,0, v.locb[4])
+		budki[i].marker=createMarker(v.locb[1], v.locb[2], v.locb[3]-0.6, "cylinder", 1.1, 255,255,0,100)
+		--budki[i].blip=createBlip(v.locb[1], v.locb[2], v.locb[3], 56, 1, 0, 0, 0, 255, 100,100)
+	end
+end)
+
+addEventHandler("onClientMarkerHit", resourceRoot, budkaMarkerHit)
+addEventHandler("onClientMarkerLeave", resourceRoot, budkaMarkerLeave)
+
+local function budkaPozycjaClick()
+    local selectedRow, selectedCol = guiGridListGetSelectedItem( gbudka.gl );
+    if not selectedRow then return end
+    local wybranyCel = guiGridListGetItemData( gbudka.gl, selectedRow, 1 );
+    if not wybranyCel then return end
+
+
+	guiSetVisible(gbudka.win, false)
+	showCursor(false)
+
+	--local nosicielArtefakto=getElementAttachedTo(getElementByID("artefakt"))
+	local graczMaArtefakt=false
+	if nosicielArtefaktu and nosicielArtefaktu==localPlayer then graczMaArtefakt=true end
+
+    if getElementData(localPlayer, "atrakcja") or getElementData(localPlayer,"onArena") or graczMaArtefakt then
+    	playSound("audio/phone-busy.ogg")
+    	return
+    end
+
+	if wybranyCel==-1 then
+		triggerServerEvent("doTransportToHome", resourceRoot)
+		triggerServerEvent("setPedAnimation", localPlayer)
+		return
+	elseif wybranyCel==-2 then
+		triggerServerEvent("doTransportToGang", resourceRoot)
+		triggerServerEvent("setPedAnimation", localPlayer)
+		return
+	end
+
+	-- telpos={-288.77,1535.63,75.56, 4}
+	fadeCamera(false)
+	setTimer(function(cel)
+		local x,y,z,r=unpack(budki[cel].telpos)
+		setElementPosition(localPlayer, x+math.random(-r,r), y+math.random(-r,r), z)
+		fadeCamera(true)
+		end, 1000, 1, wybranyCel)
+end
+
+addEventHandler( "onClientGUIDoubleClick", gbudka.gl, budkaPozycjaClick, false );
+
+addEvent("onMobileCall", true)
+addEventHandler("onMobileCall", root, function()
+	budkaMarkerHit(localPlayer, true)
+end)

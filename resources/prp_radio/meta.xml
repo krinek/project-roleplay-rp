@@ -1,0 +1,7 @@
+<meta>
+	<info author="Daniex0r" type="script" description="Radio_Samochodowe"/>
+
+	<file src="myriadproregular.ttf" type="client" />
+	<script src="c_radio.lua" type="client"/>
+	<script src="s_radio.lua" type="server"/>
+</meta>

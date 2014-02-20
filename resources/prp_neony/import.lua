@@ -1,0 +1,23 @@
+col16 = engineLoadCOL('RedNeonTube1.col')
+dff16 = engineLoadDFF('RedNeonTube1.dff', 0)
+engineReplaceCOL(col16, 14399)
+engineReplaceModel(dff16, 14399)
+engineReplaceCOL(col16, 14399)
+
+col17 = engineLoadCOL('BlueNeonTube1.col')
+dff17 = engineLoadDFF('BlueNeonTube1.dff', 0)
+engineReplaceCOL(col17, 14400)
+engineReplaceModel(dff17, 14400)
+engineReplaceCOL(col17, 14400)
+
+col18 = engineLoadCOL('GreenNeonTube1.col')
+dff18 = engineLoadDFF('GreenNeonTube1.dff', 0)
+engineReplaceCOL(col18, 14401)
+engineReplaceModel(dff18, 14401)
+engineReplaceCOL(col18, 14401)
+
+col19 = engineLoadCOL('YellowNeonTube1.col')
+dff19 = engineLoadDFF('YellowNeonTube1.dff', 0)
+engineReplaceCOL(col19, 14402)
+engineReplaceModel(dff19, 14402)
+engineReplaceCOL(col19, 14402)

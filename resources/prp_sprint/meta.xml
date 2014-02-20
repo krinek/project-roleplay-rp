@@ -1,0 +1,5 @@
+<meta>
+    <info author="Project-Roleplay" type="script" description="blokada biegania"/>
+
+    <script src="sprintC.lua" type="client" />
+</meta>
